@@ -43,6 +43,7 @@ public class AccessLogSplitBolt implements IRichBolt{
 			System.out.println("***********************LINE::: ");*/
 			collector.emit("stream1",new Values(bean));
 			collector.emit("stream2",new Values(bean.getAuthuser()));
+			//collector.emit("stream3",new Values(bean.getRemoteHost(),bean.getAuthuser(),bean.getRequesturl(),bean.getRequestStatus(),bean.getRequestMethod()));
 			
 		
 		}
@@ -58,6 +59,7 @@ public class AccessLogSplitBolt implements IRichBolt{
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
 		declarer.declareStream("stream1",new Fields("bean"));
 		declarer.declareStream("stream2",new Fields("authuser"));
+		//declarer.declareStream("stream3",new Fields("remoteHost","authuser","requesturl","requestStatus","requestMethod"));
 		//declarer.declareStream("stream1", new Fields("bean"));
 		
 	}
