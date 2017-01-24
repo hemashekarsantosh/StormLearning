@@ -16,7 +16,7 @@ public class HelloWorldStorm {
 
 	public static void main(String[] args) {
 		
-		String inputFile="/opt/test.log";
+		String inputFile="D:/test.log";
 		
 		Config config=new Config();
 		config.put("inputFile", inputFile);

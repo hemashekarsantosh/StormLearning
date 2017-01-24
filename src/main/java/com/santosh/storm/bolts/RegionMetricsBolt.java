@@ -45,7 +45,7 @@ public class RegionMetricsBolt implements IRichBolt {
 	        	region="AMERICAS";
 	        }
 	        SolrQuery solquery = new SolrQuery();
-			String query="appName:"+bean.getAppName()+"AND region:"+region;
+			String query="appName:"+bean.getAppName()+"  AND region:"+region;
 			System.out.println(query);
 			solquery.set("q",query);   
 			solquery.set("defType", "edismax");
